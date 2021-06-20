@@ -67,3 +67,8 @@ docker network connect k3d-k3s-default registry.localhost
 
 echo "127.0.0.1 registry.localhost" >> /etc/hosts 
 
+------------------------------------------------------------------------------------------------
+
+# setting flask environment
+export FLASK_ENV=development
+
