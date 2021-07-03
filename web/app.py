@@ -4,7 +4,7 @@ app = Flask("ppa")
 
 @app.route('/')
 def mainpage():
-    return func.hello()
+    return "<pre>"+ func.container() + "</pre>"
 
 @app.route('/test' ,methods=["GET"])
 def mytest():
@@ -18,3 +18,11 @@ def mytest():
 @app.route('/form')
 def myform():
     return render_template("form.html")
+
+@app.route('/check')
+def check():
+    return func.myfiles()
+
+
+
+
