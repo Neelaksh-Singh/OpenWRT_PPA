@@ -6,8 +6,15 @@ app = Flask("ppa")
 def mainpage():
     return func.hello()
 
-@app.route('/test')
+@app.route('/test' ,methods=["GET"])
 def mytest():
-    params = {'name': 'User', 'type': 'developer'}
+    rpLink = request.args.get("rpLink")
+    imgName = request.args.get("imgName")
+    verName = request.args.get("verName")
+    # if request == 'POST'
+    params = {'rpLink': rpLink, 'imgName': imgName, 'verName': verName}
     htmlcode = render_template('index.html', **params)
     return htmlcode
+@app.route('/form')
+def myform():
+    return render_template("form.html")
