@@ -6,22 +6,25 @@ app = Flask("ppa")
 def mainpage():
     return "<pre>"+ func.container() + "</pre>"
 
-@app.route('/test' ,methods=["GET"])
+@app.route('/test',methods=["GET", "POST"])
 def mytest():
-    rpLink = request.args.get("rpLink")
-    imgName = request.args.get("imgName")
-    verName = request.args.get("verName")
-    # if request == 'POST'
-    params = {'rpLink': rpLink, 'imgName': imgName, 'verName': verName}
-    htmlcode = render_template('index.html', **params)
+    # rpLink = request.args.get("rpLink")
+    # imgName = request.args.get("imgName")
+    # verName = request.args.get("verName")
+    # # if request == 'POST'
+    # params = {'rpLink': rpLink, 'imgName': imgName, 'verName': verName}
+    htmlcode = render_template('index.html', input="neelaksh")
     return htmlcode
 @app.route('/form')
 def myform():
     return render_template("form.html")
 
-@app.route('/check')
+@app.route('/check',methods=["GET", "POST"])
 def check():
-    return func.myfiles()
+    rpLink = request.args.get("repo-url")
+    imgName = request.args.get("image-name")
+    verName = request.args.get("version")
+    return "HELLO"
 
 
 
