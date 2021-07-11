@@ -1,4 +1,4 @@
-FROM yhnw/openwrt-sdk:base
+FROM openwrt-sdk:base
 
 ENV SDK_URL {{ user_url }}
 ENV SDK_SUFFIX .tar.xz
