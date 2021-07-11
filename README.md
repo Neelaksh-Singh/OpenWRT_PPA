@@ -1,2 +1,2 @@
 # OpenWRT_PPA
-GSoC-21 Project fro Freifunk
+GSoC-21 Project for Freifunk
