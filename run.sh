@@ -9,6 +9,9 @@ git clone "${repo_link}" "${folder_name}"/
 
 docker run  --name qwe -v "${PWD}"/"${folder_name}"/:/home/build/openwrt/remote neelaksh1/custom-owrtppa:v1
 
+docker run -it --name testppa -v "${PWD}"/temp:/home/build/openwrt/remote neelaksh1/custom-owrtppa:v2
+
+
 #./htp.sh
 
 

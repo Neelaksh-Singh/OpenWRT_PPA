@@ -78,6 +78,12 @@ echo "127.0.0.1 registry.localhost" >> /etc/hosts
 
 ------------------------------------------------------------------------------------------------
 
+wget https://get.helm.sh/helm-v3.6.3-linux-amd64.tar.gz
+tar -xzf helm-v3.6.3-linux-amd64.tar.gz
+mv linux-amd64/helm /usr/bin/
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
+--------------------------------------------------------------------------------
 # setting flask environment
 export FLASK_ENV=development
 
