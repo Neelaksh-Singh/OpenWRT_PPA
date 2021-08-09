@@ -78,11 +78,10 @@ echo "127.0.0.1 registry.localhost" >> /etc/hosts
 
 ------------------------------------------------------------------------------------------------
 
-wget https://get.helm.sh/helm-v3.6.3-linux-amd64.tar.gz
-tar -xzf helm-v3.6.3-linux-amd64.tar.gz
-mv linux-amd64/helm /usr/bin/
-helm repo add bitnami https://charts.bitnami.com/bitnami
+# creating dump data folder
+mkdir /tmp/ppa-data
 
+docker run -d --name ppa-server -v /tmp/ppa-data:/usr/local/apache2/htdocs -p 8081:80 neelaksh1/ppa-httpd:v1
 --------------------------------------------------------------------------------
 # setting flask environment
 export FLASK_ENV=development
