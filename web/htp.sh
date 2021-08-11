@@ -6,7 +6,7 @@ deploy_name="$1"
 
 #rm -rf /root/bin/*
 
-docker cp "${deploy_name}":/home/build/openwrt/bin /tmp/ppa-data/
+docker cp "$1":/home/build/openwrt/bin /tmp/ppa-data/"$1"
 
 #docker run -d --name ftptest -p 20-21:20-21 -p 65500-65515:65500-65515 -v /root/bin/:/var/ftp:ro neelaksh1/custom-ftp:v1
 

@@ -9,12 +9,12 @@ def mainpage():
 @app.route('/test',methods=["GET", "POST"])
 def mytest():
     rpLink = request.args.get("repo-url")
-    imgName = request.args.get("image-name")
-    func.url_present(rpLink,imgName)
+    deploy_name = request.args.get("deploy-name")
+    func.url_present(rpLink,deploy_name)
     # verName = request.args.get("verName")
     # # if request == 'POST'
     # params = {'rpLink': rpLink, 'imgName': imgName, 'verName': verName}
-    htmlcode = render_template('index.html', input=func.container())
+    htmlcode = render_template('index.html')
     return htmlcode
 @app.route('/form')
 def myform():

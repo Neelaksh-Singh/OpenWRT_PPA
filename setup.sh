@@ -80,13 +80,10 @@ echo "127.0.0.1 registry.localhost" >> /etc/hosts
 
 # creating dump data folder
 mkdir /tmp/ppa-data
-
+mkdir /tmp/ppa-dump
 docker run -d --name ppa-server -v /tmp/ppa-data:/usr/local/apache2/htdocs -p 8081:80 neelaksh1/ppa-httpd:v1
 --------------------------------------------------------------------------------
 # setting flask environment
 export FLASK_ENV=development
 
-# starting flask app
-
-flask run ../web/app.py
 
