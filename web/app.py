@@ -1,10 +1,16 @@
 from flask import Flask , request, render_template
+from flask_cors import CORS
 import func
+
 app = Flask("ppa")
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
+
 
 @app.route('/')
 def mainpage():
-    return "<pre>"+ func.container() + "</pre>"
+    htmlcode = render_template('index.html')
+    return htmlcode
+
 
 @app.route('/test',methods=["GET", "POST"])
 def mytest():
@@ -14,8 +20,7 @@ def mytest():
     # verName = request.args.get("verName")
     # # if request == 'POST'
     # params = {'rpLink': rpLink, 'imgName': imgName, 'verName': verName}
-    htmlcode = render_template('index.html')
-    return htmlcode
+    
 @app.route('/form')
 def myform():
     return render_template("form.html")
