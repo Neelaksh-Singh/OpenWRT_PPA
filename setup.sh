@@ -83,7 +83,7 @@ mkdir /tmp/ppa-data
 mkdir /tmp/ppa-dump
 docker run -d --name ppa-server -v /tmp/ppa-data:/usr/local/apache2/htdocs -p 8081:80 neelaksh1/ppa-httpd:v1
 --------------------------------------------------------------------------------
-# setting flask environment
+#setting flask environment
 export FLASK_ENV=development
 
 
