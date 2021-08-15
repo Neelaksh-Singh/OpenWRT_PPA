@@ -4,8 +4,9 @@ import subprocess
 # CMD for getting all the running docker containers
 dc = " docker ps --format 'table {{.ID}}\t{{.Image}}\t{{.Names}}\t{{.Ports}}' "
 
-def url_present(url, deploy_name):
-    subprocess.getoutput("./run.sh " + str(url) + "  " + str(deploy_name) )
+def build(url, deploy_name):
+    subprocess.Popen(["./run.sh " ,"url" , "deploy_name"] )
+    print("Done with the build")
 
 def container():
     return subprocess.getoutput(dc)
