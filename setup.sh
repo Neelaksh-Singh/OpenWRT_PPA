@@ -1,5 +1,6 @@
 #!/bin/bash 
 
+pip3 install -r requirement.txt
 chmod +x web/htp.sh web/run.sh web/build.sh
 
 # kubectl configuration
