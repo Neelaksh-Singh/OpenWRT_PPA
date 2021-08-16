@@ -78,9 +78,13 @@ chmod +x web/htp.sh web/run.sh web/build.sh
 mkdir -p /tmp/ppa-data
 mkdir -p /tmp/ppa-dump
 chmod o+x /tmp/ppa-data 
+export FLASK_ENV=development
+
+docker pull neelaksh1/custom-owrtppa:v3
+
 docker run -d --name ppa-server -v /tmp/ppa-data:/usr/local/apache2/htdocs -p 8085:80 neelaksh1/ppa-httpd:v1
 #--------------------------------------------------------------------------------
 #setting flask environment
-export FLASK_ENV=development
+#export FLASK_ENV=development
 
 
